@@ -33,6 +33,6 @@ app.post("/html-to-word", upload.single("file"), async function (req, res) {
     readStream.pipe(res)
 })
 
-app.listen(process.env.PORT, () => {
-    console.log(`Server started at port ${process.env.PORT}.`)
+app.listen(process.env.PORT, process.env.HOSTNAME, () => {
+    console.log(`Server started at port ${process.env.HOSTNAME}:${process.env.PORT}.`)
 })
